@@ -34,7 +34,7 @@ function generateQuestion() {
 // Generate 25 questions
 function generateQuiz() {
     const quizContainer = document.getElementById('quiz-container');
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 15; i++) {
         const { question, answer } = generateQuestion();
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `
@@ -73,16 +73,16 @@ function submitQuiz() {
             score++;
         }
     });
-    alert(`Quiz submitted! Your score: ${score} out of 25`);
+    alert(`Quiz submitted! Your score: ${score} out of 15`);
 }
 
 // Initialize the quiz
 generateQuiz();
 
 // Start the timer
-const seventyFiveMinutes = 75 * 60,
+const tenMinutes = 10 * 60,
     display = document.querySelector('#time');
-startTimer(seventyFiveMinutes, display);
+startTimer(tenMinutes, display);
 
 // Add event listener to submit button
 document.getElementById('submit-btn').addEventListener('click', submitQuiz);
